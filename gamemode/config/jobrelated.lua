@@ -285,6 +285,7 @@ DarkRP.createCategory{
     sortOrder = 101,
 }
 
+})
 DarkRP.createCategory{
     name = "Gangsters",
     categorises = "jobs",
@@ -302,3 +303,27 @@ DarkRP.createCategory{
     canSee = fp{fn.Id, true},
     sortOrder = 255,
 }
+
+TEAM_MERCENAIRE = DarkRP.createJob("mercenaire", {
+    color = Color(160, 97, 91, 255),
+    model = {
+        "models/player/mossman_arctic.mdl",
+        "models/player/mossman.mdl",
+        "models/player/t_leet.mdl"
+    },
+    description = [[tu est mercenaire et tu fais les demande de tes clients .]],
+    weapons = {"pocket", "lockpick", "keys", "weapon_p2282", "stunstick", "weapon_physcannon", "weapon_fists"},
+    command = "mercenaire",
+    max = 1,
+    salary = 380,
+    admin = 0,
+    vote = false,
+    hasLicense = false,
+    candemote = false,
+    category = "Citizens",
+    PlayerSpawn = function(ply)
+        ply:SetMaxHealth(100)
+        ply:SetHealth(100)
+        ply:SetArmor(50)
+    end
+})
